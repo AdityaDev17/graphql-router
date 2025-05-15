@@ -1,0 +1,5 @@
+# Ignore all .graphql files
+*.graphql
+
+# Except the one needed for deployment
+!supergraph.graphql
