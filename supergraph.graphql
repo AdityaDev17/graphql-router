@@ -45,20 +45,19 @@ type Product
 {
   id: ID!
   name: String!
-  price: Float!
 }
 
 type Query
   @join__type(graph: PRODUCTS)
   @join__type(graph: USERS)
 {
-  products: [Product!]! @join__field(graph: PRODUCTS)
-  users: [User!]! @join__field(graph: USERS)
+  topProducts: [Product] @join__field(graph: PRODUCTS)
+  me: User @join__field(graph: USERS)
 }
 
 type User
   @join__type(graph: USERS, key: "id")
 {
   id: ID!
-  name: String!
+  username: String!
 }
